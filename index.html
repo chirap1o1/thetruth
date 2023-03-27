@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Door Image</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.door {
+			width: 500px;
+			height: 700px;
+			background: url('images.png') no-repeat;
+			background-size: cover;
+			position: relative;
+			transition: transform 1s ease-in-out;
+			transform-origin: left;
+			transform-style: preserve-3d;
+			perspective: 1000px;
+		}
+		.door:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 50%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.3);
+			transform-origin: right;
+			transform: rotateY(0deg);
+			transition: transform 1s ease-in-out;
+			transform-style: preserve-3d;
+		}
+		.door .door-image {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: url('finalbhaibehen1.png') no-repeat;
+			background-size: cover;
+			transform-origin: left;
+			transform: rotateY(90deg);
+			transition: transform 1s ease-in-out;
+			transform-style: preserve-3d;
+		}
+		.yes-btn {
+			display: block;
+			margin: 20px auto;
+			padding: 10px 20px;
+			background-color: #ff3300;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		.no-btn {
+			display: block;
+			margin: 20px auto;
+			padding: 10px 20px;
+			background-color: #0099ff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+    <h1>WHAT YOUR ACTUAL DADDY CALL YOU?</h1>
+	<div class="container">
+
+		<div class="door">
+			<div class="door-image"></div>
+		</div>
+
+	</div>
+
+	<button class="no-btn">RAAANI</button>
+	<button class="yes-btn">LADOOO</button>
+	<h2>The picture above in the door dipicts <b>"THE BHAI BHEN PYYAR"</b></h2>
+    <h3>The Daddy we were talking about</h3>
+	<img src="finaldaughter.png">
+	<script type="text/javascript">
+		var door = document.querySelector('.door');
+		var doorImage = document.querySelector('.door-image');
+		var yesBtn = document.querySelector('.yes-btn');
+		var noBtn = document.querySelector('.no-btn');
+
+		yesBtn.addEventListener('click', function() {
+			door.style.transform = 'rotateY(-90deg)';
+			setTimeout(function() {
+				doorImage.style.transform = 'rotateY(0deg)';
+			}, 500);
+		});
+
+		noBtn.addEventListener('click', function() {
+			var randomDirection = Math.floor(Math.random() * 4);
+			if (randomDirection == 0) {
+				noBtn.style.transform = 'translateX(-200px)';
+			} else if (randomDirection == 1) {
+				noBtn.style.transform = 'translateX(200px)';
+			} else if (randomDirection == 2) {
+				noBtn.style.transform = 'translateY(-200px)';
+			} else {
+				noBtn.style.transform = 'translateY(200px)';
+			}
+		});
+	</script>
+
+</body>
+</html>
